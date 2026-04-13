@@ -1,29 +1,39 @@
 {
-  "name": "knowledge_base",
-  "version": "1.0.0",
-  "description": "",
-  "type": "module",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
-  "exports": {
-    ".": {
-      "import": "./dist/index.js",
-      "types": "./dist/index.d.ts"
+    "name": "knowledge_base",
+    "version": "1.0.0",
+    "description": "",
+    "type": "module",
+    "main": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": "./dist/index.js",
+            "types": "./dist/index.d.ts"
+        }
+    },
+    "scripts": {
+        "dev": "tsx example/demo.ts",
+        "build": "tsc -p tsconfig.json",
+        "format": "prettier --write \"src/**/*.ts\" \"example/**/*.ts\" \"*.{json,js}\" \"tsconfig.json\"",
+        "format:check": "prettier --check \"src/**/*.ts\" \"example/**/*.ts\" \"*.{json,js}\" \"tsconfig.json\"",
+        "lint": "eslint \"src/**/*.ts\" \"example/**/*.ts\"",
+        "lint:fix": "eslint --fix \"src/**/*.ts\" \"example/**/*.ts\"",
+        "check": "pnpm run format:check && pnpm run lint && pnpm run build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@openai/codex-sdk": "^0.120.0"
+    },
+    "devDependencies": {
+        "@eslint/js": "^10.0.1",
+        "@types/node": "^25.6.0",
+        "eslint": "^10.2.0",
+        "eslint-config-prettier": "^10.1.8",
+        "prettier": "^3.8.2",
+        "tsx": "^4.21.0",
+        "typescript": "^6.0.2",
+        "typescript-eslint": "^8.58.1"
     }
-  },
-  "scripts": {
-    "dev": "tsx example/demo.ts",
-    "build": "tsc -p tsconfig.json"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "@openai/codex-sdk": "^0.120.0"
-  },
-  "devDependencies": {
-    "@types/node": "^25.6.0",
-    "tsx": "^4.21.0",
-    "typescript": "^6.0.2"
-  }
 }
