@@ -1,6 +1,7 @@
 node_modules
 dist
 pnpm-lock.yaml
+.eslintcache
 *.min.js
 .env
 .idea
